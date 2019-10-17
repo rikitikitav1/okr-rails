@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the small project for my OKR made in according to the RoR [tutorial](https://www.learnenough.com/ruby-on-rails-6th-edition)
 
-Things you may want to cover:
+## Ruby version
 
-* Ruby version
+2.6.3
 
-* System dependencies
+## Configuration
 
-* Configuration
+POSTGRES_PASSWORD - for db password in production environment
+POSTGRES_USER - for db user in production environment
+POSTGRES_DB - for db name in production environment
+DB_HOST - for db host in production environment
+DB_PORT - for db port in production environment
 
-* Database creation
+## Database docker  run example
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`docker run --name okr-rails-db --env-file ./docker/env.list -p 5432:5432 -d postgres`
