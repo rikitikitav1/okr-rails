@@ -32,3 +32,15 @@ production:
   pool: <%= ENV.fetch('THREADS') { 2 } * 2 %>
   sslmode: <%= ENV.fetch('DB_SSL_MODE') {'prefer'} %>
 
+development:
+  <<: *default
+  adapter: postgresql
+  database: <%= ENV.fetch('POSTGRES_DB') { 'okr-rails' } %>
+  username: <%= ENV.fetch('POSTGRES_USER') { 'okr-rails' } %>
+  host: <%= ENV.fetch('DB_HOST') { '127.0.0.1' } %>
+  port: <%= ENV.fetch('DB_PORT') { 5432 } %>
+  password: <%= ENV.fetch('POSTGRES_PASSWORD') { 'okr-rails' } %>
+  prepared_statements: false
+  pool: <%= ENV.fetch('THREADS') { 2 } * 2 %>
+  sslmode: <%= ENV.fetch('DB_SSL_MODE') {'prefer'} %>
+

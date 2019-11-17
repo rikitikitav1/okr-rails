@@ -56,9 +56,12 @@ group :development, :test do
 end
 
 group :test do
+  gem 'minitest'
   gem 'guard-minitest'
   gem 'mini_backtrace'
   gem 'minitest-reporters'
+  gem 'rspec'
+  gem 'rspec-rails'
   gem 'rails-controller-testing'
 end
 
