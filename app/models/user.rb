@@ -11,7 +11,7 @@ class User < ApplicationRecord
                     format: { with: EMAIL_REGEX,
                               message: 'please enter email in correct format' },
                     uniqueness: { case_sensitive: false }
-  validates :password, presence: true, length: { minimum: 6 },
+  validates :password, presence: true, length: { minimum: 6 }, allow_blank: true,
                        format: { with: PASSWORD_REGEX,
                                  message: 'password should contain each of upper/lower/digit/special' }
   has_secure_password

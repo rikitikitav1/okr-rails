@@ -21,12 +21,11 @@ def logged_in?
 end
 
 def log_in_as(user, options = {})
-  password = options[:password] || 'P@ssword123'
-  remember_me = options[:remember_me] || '1'
   if integration_test?
-    post login_path, params: { session: { email: user.email,
-                                          password: password,
-                                          remember_me: remember_me } }
+    post login_path,
+         params: { session: { email: user.email,
+                              password: options.fetch(:password) { 'P@ssword123' },
+                              remember_me: options.fetch(:remember_me) { '1' } } }
   else
     session[:user_id] = user.id
   end
@@ -34,4 +33,19 @@ end
 
 def integration_test?
   defined?(post_via_redirect)
+end
+
+# for controllers
+
+def login(user)
+  user = User.where(login: user.to_s).first if user.is_a?(Symbol)
+  request.session[:user_id] = user.id
+end
+
+def login_admin
+  login(:admin)
+end
+
+def current_user
+  User.find(request.session[:user])
 end

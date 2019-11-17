@@ -35,9 +35,7 @@ describe 'signup test' do
     end
 
     it { expect { subject }.to change(User, :count) }
-
-    it { expect(subject).to redirect_to('/users/1') }
-
+    it { expect(subject).to redirect_to("/users/#{User.last.id}") }
     it do
       subject
       expect(flash[:success]).to eq('Welcome to the Sample App!')

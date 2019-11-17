@@ -24,7 +24,9 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
-gem 'sdoc'
+gem 'faker', '~> 2.7'
+
+gem 'sdoc', '~> 1.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -36,9 +38,11 @@ gem 'sdoc'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'will_paginate', '~>3.2'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap-sass', '>=3'
+gem 'bootstrap-will_paginate', '>= 1'
 
 # for encrypting
 gem 'bcrypt', '>=3'
