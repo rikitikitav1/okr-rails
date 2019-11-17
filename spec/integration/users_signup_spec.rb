@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 describe 'signup test' do
-  let(:users_path) { '/users' }
-  let(:signup_path) { '/signup' }
   let(:params) do
     { user: { name: '',
               email: 'user@invalid',
